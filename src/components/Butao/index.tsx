@@ -4,11 +4,12 @@ import './style.scss';
 interface Iprops{
  texto:string;
  type:"button" | "submit" | "reset" | undefined;
+ onClick?:() => void;
 }
 
-export function Botao ({texto,type}:Iprops){
+export function Botao ({texto,type, onClick}:Iprops){
   return(
-   <button className='botao' type={type}>
+   <button onClick={onClick} className='botao' type={type}>
    {texto}
    </button>
   )
